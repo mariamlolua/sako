@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="games">
+        <div class="previous">
+            <button id="left">
+                <img class="arrow" src="https://icones.pro/wp-content/uploads/2021/06/icone-fleche-gauche-noir.png" class="left" onclick="changeSlide(-1)">
+            </button>
+        </div>
+         <br>
+        <div class="slides">
+            <img  class="pics"   src="https://i0.wp.com/picjumbo.com/wp-content/uploads/man-looking-at-heart-shaped-explosion-free-photo.jpg?w=600&quality=80">
+            <h1> mOvIe 1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam eum explicabo reprehenderit impedit! Non tempore consequuntur vero. Veritatis non, modi sapiente hic praesentium nihil dignissimos perspiciatis! Esse suscipit optio voluptatem.</p>
+            <a href="https://i0.wp.com/picjumbo.com/wp-content/uploads/man-looking-at-heart-shaped-explosion-free-photo.jpg?w=600&quality=80">WATCH DA MOVIE 1</a>
+        </div>
+
+        <div class="slides">
+            <img  class="pics" src="https://cdn.pixabay.com/photo/2016/02/10/21/57/heart-1192662_640.jpg">
+            <h1>mOvIe 2</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptate odio tenetur iste, magnam eligendi molestias expedita voluptatem nihil illum quibusdam non distinctio at. Facilis iste mollitia temporibus dignissimos a!</p>
+            <a href="https://i0.wp.com/picjumbo.com/wp-content/uploads/man-looking-at-heart-shaped-explosion-free-photo.jpg?w=600&quality=80">WATCH DA MOVIE 2</a>
+        </div>
+
+        <div class="slides">
+            <img  class="pics" src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg">
+            <h1>mOvIe 3</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi dolorum iusto incidunt fugiat, aliquam perspiciatis laborum earum qui facilis ipsam inventore similique voluptatem maiores tenetur ea omnis velit suscipit nostrum!</p>
+            <a href="https://i0.wp.com/picjumbo.com/wp-content/uploads/man-looking-at-heart-shaped-explosion-free-photo.jpg?w=600&quality=80">WATCH DA MOVIE 3</a>
+        </div>
+
+        <div class="slides">
+            <img  class="pics" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYybdmjkOH7OxT1__h9Ixm1q_GmI9KC5JUcIas00t-OMMiA-DRGXFWqaoi3MpCQ9atMJQ&usqp=CAU">
+            <h1>MONEKY</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque ab ipsam quisquam eum laudantium consectetur nulla fuga cum facilis distinctio rem accusantium minus illo perferendis nihil suscipit, explicabo eius! Debitis.</p>
+            <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYybdmjkOH7OxT1__h9Ixm1q_GmI9KC5JUcIas00t-OMMiA-DRGXFWqaoi3MpCQ9atMJQ&usqp=CAU">WATCH MONKEY</a>
+        </div>
+
+        <div class="slides">
+            <Img  class="pics" src="https://media.istockphoto.com/id/496922593/photo/i-put-pygmaeus.jpg?s=612x612&w=0&k=20&c=DjbbB3IQEcnKOrYMy5apI4tkSsry9_csPmc3UXGKENE=">
+                <h1>MONKEY II</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat corporis, aliquam assumenda quia quisquam incidunt tempora aperiam blanditiis esse sapiente id illum qui, minima voluptates atque tempore harum? Debitis, molestias.</p>
+                <a href="https://media.istockphoto.com/id/496922593/photo/i-put-pygmaeus.jpg?s=612x612&w=0&k=20&c=DjbbB3IQEcnKOrYMy5apI4tkSsry9_csPmc3UXGKENE=">WATCH MONEKY II</a>
+            </div>
+
+        <div class="next">
+            <button id="right">
+                <img class="arrow" src="https://cdn-icons-png.flaticon.com/512/44/44621.png" class="right" onclick="changeSlide(+1)">
+            </button>
+        </div>
+
+
+        
+
+    </header>
+    <div id="movies">
+
+    </div>
+
+
+<script>
+
+
+     var slideIndex = 1;
+    showSlide(slideIndex)
+
+    function changeSlide(n){
+        showSlide(slideIndex = slideIndex + n)
+    }
+
+  
+    function showSlide(n){
+        var slides = document.getElementsByClassName("slides")
+
+        
+        if(n > slides.length){
+            slideIndex = 1
+        }
+
+        if(n < 1){
+            slideIndex = slides.length
+        }
+
+        for( var i = 0; i < slides.length ; i++){
+            slides[i].style.display = "none"
+        }
+      
+        slides[slideIndex -1].style.display = "block"
+    }
+
+</script>
+<div class="cursor"></div>
+    <script >
+        const cursor = document.querySelector(".cursor");
+        var timeout;
+        document.addEventListener("mousemove", (p) => {
+        let x = p.pageX;
+        let y = p.pageY;
+
+        
+        cursor.style.top = y + "px";
+        cursor.style.left = x + "px";
+        cursor.style.display = "block";
+
+      
+        function mouseStopped(){
+            cursor.style.display = "none";
+        }
+        
+        clearTimeout(timeout);
+            timeout = setTimeout(mouseStopped, 1000);
+        });
+
+       
+        document.addEventListener("mouseout", () => {
+        cursor.style.display = "none";
+        });
+
+    </script>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

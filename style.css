@@ -1,0 +1,43 @@
+body{
+    text-align: center;
+    color:white;
+    background-color: rgb(11, 22, 24);
+}
+button{
+    position: relative;
+}
+.arrow{
+    width:100px;
+    height:80px;
+    position: relative;
+}
+#right{
+    position: relative;
+    top:200px;
+    left: 500px;
+    cursor: none;
+}
+#left{
+    position: relative;
+    top:300px;
+    right: 500px;
+    cursor: none;
+}
+.slides{
+    position: absolute;
+}
+.pics{
+    width: 600px;
+    height:400px
+}
+
+body{
+    cursor: none;
+}
+.cursor{ 
+  position: fixed;
+  content: url(https://freepngimg.com/save/25057-cursor-arrow-transparent-image/512x512);
+  width: 30px;
+  height: 30px;
+  border-radius: 2px; 
+}
